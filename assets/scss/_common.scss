@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: $font-size;
+  font-family: $font-main;
+  overflow-y: scroll;
+}
+
+h1 {
+  font-family: $font-header;
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: 0.08em;
+  line-height: 1.2em;
+
+  @include lg-min {
+    font-size: 3.75rem;
+  }
+
+  @include lg-md {
+    font-size: 2.5rem;
+  }
+
+  @include md {
+    font-size: 1.875rem;
+  }
+}
+
+h2 {
+  font-family: $font-header;
+  color: $color-primary;
+  letter-spacing: 0.1em;
+  line-height: 1.2em;
+  @include lg-min {
+    margin-top: 0;
+    margin-bottom: 56px;
+    font-size: 2.5rem;
+  }
+  @include lg-md {
+    margin-bottom: 42px;
+    font-size: 2rem;
+  }
+  @include md-sm {
+    margin-bottom: 36px;
+    font-size: 2rem;
+  }
+  @include sm {
+    margin-bottom: 36px;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+}
+
+a {
+  color: $color-light;
+  text-decoration: none;
+}
+
+input,
+button {
+  font-family: inherit;
+}
+
+.btn {
+  display: block;
+  text-align: center;
+  letter-spacing: 0.1em;
+  transition: background-color 0.5s;
+
+  &--light {
+    border: 2px $color-light;
+    background-color: rgba($color-light, 0.1);
+    border-style: solid;
+
+    @include lg-min {
+      min-width: 250px;
+      height: 60px;
+      padding: 18px $gap;
+      font-size: 1.125rem;
+    }
+    @include lg-md {
+      min-width: 200px;
+      height: 50px;
+      padding: 14px $gap;
+    }
+    @include md {
+      min-width: 170px;
+      height: 40px;
+      padding: 9px $gap;
+      letter-spacing: 0.05em;
+    }
+  }
+
+  &--primary {
+    font-size: 1.125rem;
+    height: 60px;
+    padding: 18px $gap;
+    border: 2px solid $color-primary;
+    background-color: rgba($color-primary, 0.8);
+  }
+
+  &--active {
+    background-color: rgba($color-light, 0.1);
+    transition: border 0.5s;
+    transition: background-color 0.5s;
+    &:hover,
+    :focus {
+      border: 2px solid $color-light;
+    }
+    &:hover,
+    :focus {
+      background-color: $color-accent;
+    }
+  }
+}
+
+.btn--primary:hover,
+.btn--light:hover {
+  background-color: $color-accent;
+}

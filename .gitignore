@@ -1,6 +1,5 @@
 node_modules/
 libs/
 samples/
-.libs-package-json
 .yarnc
-assets/scss/
+

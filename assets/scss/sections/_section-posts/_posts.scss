@@ -1,0 +1,55 @@
+.posts {
+    @include lg-min {
+        padding-top: $gap * 5;
+        padding-bottom: $gap * 5;
+    }
+    @include lg-md {
+        padding-top: $gap * 4;
+        padding-bottom: $gap * 4;
+    }
+    @include md {
+        padding-top: $gap * 3;
+        padding-bottom: $gap * 3;
+    }
+
+    &__container {
+        @extend %container;
+    }
+    &__grid {
+        display: grid;
+        padding-bottom: $gap;
+        @include lg-min {
+            grid-template-areas: "p1  p1 p2 p3" "p4 p5 p6 p6";
+            grid-template-columns: repeat(4, 1fr);
+            gap: $gap;
+        }
+        @include lg-md {
+            grid-template-areas: "p1  p1 p2 " "p3 p4 p4" "p5 p5 p6";
+            grid-template-columns: repeat(3, 1fr);
+            gap: $gap;
+        }
+        @include md-sm {
+            grid-template-areas: "p1 p2 " "p3 p4 " "p5 p6";
+            grid-template-columns: 1fr 1fr;
+            gap: $gap;
+        }
+        @include sm {
+            grid-template-areas: "p1" "p2" "p3" "p4 " "p5" "p6";
+            grid-template-columns: 1fr;
+            gap: $gap;
+        }
+    }
+
+    &__actions {
+        @include sm-min {
+            display: flex;
+            justify-content: center;
+        }
+        @extend %btn-container;
+    }
+}
+@for $i from 1 through 6 {
+    .post-item:nth-child(#{$i}) {
+        grid-area: p#{$i};
+    }
+}
